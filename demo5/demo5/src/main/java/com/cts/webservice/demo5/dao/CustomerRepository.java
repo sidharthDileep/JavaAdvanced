@@ -8,7 +8,7 @@ import com.cts.webservice.demo5.entity.Customer;
 
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
-	List<Customer> findbyLastName(String lastName);
+	List<Customer> findByLastName(String lastName);
 
 	Customer findById(int id);
 

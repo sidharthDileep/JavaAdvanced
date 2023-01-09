@@ -1,5 +1,6 @@
 package com.cts.webservice.demo5.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,17 +12,20 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+	
+	@Column(name = "FIRSTNAME")
 	private String firstName;
-	private String secondName;
+	
+	@Column(name = "LASTNAME")
+	private String lastName;
 
 	protected Customer() {
 
 	}
 
 	public Customer(String firstName, String secondName) {
-		super();
 		this.firstName = firstName;
-		this.secondName = secondName;
+		this.lastName = secondName;
 	}
 
 	public long getId() {
@@ -40,17 +44,17 @@ public class Customer {
 		this.firstName = firstName;
 	}
 
-	public String getSecondName() {
-		return secondName;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setSecondName(String secondName) {
-		this.secondName = secondName;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", firstName=" + firstName + ", secondName=" + secondName + "]";
+		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
 
 }
